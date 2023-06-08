@@ -37,3 +37,22 @@ h1{
   font-size: 40px;
   text-shadow: 2px 2px 2px black;
 }
+
+img{
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+  border: 2px solid rgb(0, 96, 96);
+}
+
+.user-box{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.span-user{
+  display: flex;
+  flex-direction: column;
+}

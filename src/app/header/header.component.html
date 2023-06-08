@@ -1,4 +1,12 @@
 <header>
   <h1>Super Manga</h1>
-  <button (click)="auth.signIn()">Sign in</button>
+  <button *ngIf="!user" (click)="auth.signIn()">Sign in</button>
+  <div *ngIf="user" class="user-box">
+  <button *ngIf="user" (click)="auth.signOut()">Log out</button>
+    <img src="{{user.photoURL}}" alt="{{user.displayName}}">
+    <div class="span-user">
+      <span>{{user.displayName | toUpperCase}}</span>
+      <span>{{user.email}}</span>
+    </div>
+  </div>
 </header>

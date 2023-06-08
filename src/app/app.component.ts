@@ -13,13 +13,14 @@ export class AppComponent {
   mangas: Manga[] = [];
 
   constructor(private firestore: FirestoreService){
-    this.firestore.getManga('KeKAI7XhRRJbqOMNxE8w').then(manga => console.log(manga));
+    this.firestore.getManga('KeKAI7XhRRJbqOMNxE8w').then(manga => console.log('Chiamata singolo manga con id: ', manga));
     this.firestore.getMangas().then(mangasFromDb => {
       // for (let i = 0; i < mangas.length; i++) {
       //   const element = mangas[i];
       //   console.log('Collection: ', element);
       // }
       this.mangas = mangasFromDb;
+      console.log('Chiamata di tutti i manga: ', this.mangas);
     });
   }
 
