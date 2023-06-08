@@ -1,14 +1,13 @@
-<header>
-  <h1>Super Manga</h1>
-  <button (click)="auth.signIn()">Sign in</button>
-</header>
-<main>
-  <div *ngFor="let manga of mangas">
-    <span><strong>{{manga.title}}</strong></span><br>
-    <span><strong>Anno: {{manga.year}}</strong></span><br>
-    <span><strong>{{manga.isEnded ? 'Concluso' : 'In corso'}}</strong></span><br>
-  </div>
-</main>
-<footer>
-  ste cazz' de mangas...
-</footer>
+<div class="container">
+  <app-header></app-header>
+  <main>
+    <div class="card" *ngFor="let manga of mangas">
+      <span><strong>{{manga.title}}</strong></span>
+      <span><strong>Anno: {{manga.year}}</strong></span>
+      <span><strong>{{manga.isEnded ? 'Concluso' : 'In corso'}}</strong></span>
+    </div>
+  </main>
+  <footer>
+    ste cazz' de mangas...
+  </footer>
+</div>

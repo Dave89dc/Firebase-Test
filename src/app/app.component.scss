@@ -1,0 +1,37 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+span{
+  display: block;
+}
+
+.card{
+  background-color: cadetblue;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(0, 96, 96);
+  color: azure;
+  text-shadow: 1px 1px 1px black;
+  margin: 20px auto;
+}
+
+footer{
+  background-color: cadetblue;
+  border-top: 2px solid rgb(0, 96, 96);
+  color: azure;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0px 20px;
+}

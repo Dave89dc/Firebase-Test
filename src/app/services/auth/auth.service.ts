@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FirebaseService } from '../firebase/firebase.service';
-import { Auth, getAuth, onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import { Auth, User, getAuth, onAuthStateChanged, signInWithPopup } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { Subject } from 'rxjs';
 
@@ -13,14 +13,14 @@ export class AuthService {
 
   provider: GoogleAuthProvider;
 
-  userSubject: Subject<any> = new Subject();
+  userSubject: Subject<User | null> = new Subject();
 
   constructor(private firebase: FirebaseService) {
     this.auth = getAuth(this.firebase.app);
     this.provider = new GoogleAuthProvider();
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
-        console.log('Auth State: ', user);
+        //console.log('Auth State: ', user);
         this.userSubject.next(user);
       } else {
         console.log('Nessuno è loggato');

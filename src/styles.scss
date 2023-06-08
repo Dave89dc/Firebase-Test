@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Nunito:wght@400;500;600;700&display=swap');
+
+html, body{
+  padding: 0px;
+  margin: 0px;
+  min-height: 100vh;
+  font-family: Nunito, sans-serif;
+  background-color: azure;
+  overflow: hidden;
+}

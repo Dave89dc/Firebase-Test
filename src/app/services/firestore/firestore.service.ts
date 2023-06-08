@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { getFirestore, doc, getDoc, collection, getDocs, Firestore } from "firebase/firestore";
-import { Manga } from '../../model/manga';
 import { FirebaseService } from '../firebase/firebase.service';
+import { Manga } from 'src/app/models/manga/manga';
 
 @Injectable({
   providedIn: 'root'
