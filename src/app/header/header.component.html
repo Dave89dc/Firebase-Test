@@ -5,7 +5,7 @@
   <button *ngIf="user" (click)="auth.signOut()">Log out</button>
     <img src="{{user.photoURL}}" alt="{{user.displayName}}">
     <div class="span-user">
-      <span>{{user.displayName | toUpperCase}}</span>
+      <span><strong>{{user.displayName | toUpperCase}}</strong></span>
       <span>{{user.email}}</span>
     </div>
   </div>
