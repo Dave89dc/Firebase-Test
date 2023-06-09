@@ -1,6 +1,6 @@
 <header>
   <h1>Super Manga</h1>
-  <button *ngIf="!user" (click)="auth.signIn()">Sign in</button>
+  <button *ngIf="!user" (click)="auth.signIn()">Log in</button>
   <div *ngIf="user" class="user-box">
   <button *ngIf="user" (click)="auth.signOut()">Log out</button>
     <img src="{{user.photoURL}}" alt="{{user.displayName}}">
