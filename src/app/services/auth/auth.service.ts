@@ -3,6 +3,7 @@ import { FirebaseService } from '../firebase/firebase.service';
 import { Auth, User, getAuth, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { Subject } from 'rxjs';
+import { FirestoreService } from '../firestore/firestore.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,17 @@ export class AuthService {
 
   userSubject: Subject<User | null> = new Subject();
 
-  constructor(private firebase: FirebaseService) {
+  constructor(private firebase: FirebaseService, private firestore: FirestoreService) {
     this.auth = getAuth(this.firebase.app);
     this.provider = new GoogleAuthProvider();
-    onAuthStateChanged(this.auth, (user) => {
+    onAuthStateChanged(this.auth, async (user) => {
       if (user) {
-          this.userSubject.next(user);
+        const dbUser = await firestore.getUser(user.uid);
+        if(!dbUser){
+          await firestore.saveUser(user);
+        }
+
+        this.userSubject.next(user);
       } else {
         console.log('Nessuno è loggato');
         this.userSubject.next(null);

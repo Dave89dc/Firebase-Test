@@ -1,12 +1,13 @@
 <div class="container">
   <app-header></app-header>
-  <main>
+  <!-- <main>
     <div class="card" *ngFor="let manga of mangas">
       <span><strong>{{manga.title}}</strong></span>
       <span><strong>Anno: {{manga.year}}</strong></span>
       <span><strong>{{manga.isEnded ? 'Concluso' : 'In corso'}}</strong></span>
     </div>
-  </main>
+  </main> -->
+  <router-outlet></router-outlet>
   <footer>
     ste cazz' de mangas...
   </footer>
